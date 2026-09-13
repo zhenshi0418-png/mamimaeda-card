@@ -6,88 +6,52 @@
 <title>前田真実 | Mami Maeda</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Zen+Maru+Gothic:wght@500;700;900&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --pink: #ff2d95;
-    --cyan: #00e5ff;
-    --orange: #ff8a3d;
-    --purple: #8b3bff;
-    --deep: #170a2c;
-    --deep2: #2b0f4a;
+    --bg: #ece6d9;
+    --paper: #f6f2e9;
+    --ink: #34302a;
+    --ink-soft: #837a6a;
+    --line: #cdc3ac;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   html, body { height: 100%; }
 
   body {
     min-height: 100vh;
-    background:
-      radial-gradient(circle at 20% 15%, rgba(255,45,149,0.35), transparent 45%),
-      radial-gradient(circle at 85% 20%, rgba(0,229,255,0.30), transparent 45%),
-      radial-gradient(circle at 50% 100%, rgba(255,138,61,0.30), transparent 55%),
-      linear-gradient(160deg, var(--deep) 0%, var(--deep2) 55%, #1b0a3a 100%);
-    background-color: var(--deep);
-    color: #fff;
-    font-family: 'Space Grotesk', 'Zen Maru Gothic', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Noto Sans JP', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 32px 16px;
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
-
-  .glow-ring {
-    position: relative;
-    width: 100%;
-    max-width: 430px;
-    border-radius: 28px;
-    padding: 2px;
-    background: linear-gradient(135deg, var(--pink), var(--purple) 35%, var(--cyan) 70%, var(--orange));
-    background-size: 300% 300%;
-    animation: shift 8s ease infinite;
-    box-shadow: 0 0 60px -10px rgba(255,45,149,0.45), 0 0 90px -20px rgba(0,229,255,0.35);
-    opacity: 0;
-    transform: translateY(16px) scale(0.98);
-    animation: rise 0.9s cubic-bezier(.22,.61,.36,1) forwards, shift 8s ease infinite;
-  }
-
-  @keyframes rise {
-    to { opacity: 1; transform: translateY(0) scale(1); }
-  }
-
-  @keyframes shift {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
   }
 
   .card {
-    background: rgba(15, 8, 28, 0.72);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    border-radius: 26px;
-    padding: 56px 40px 40px;
+    width: 100%;
+    max-width: 400px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 56px 40px 44px;
     text-align: center;
-    position: relative;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: rise 0.7s ease forwards;
   }
+
+  @keyframes rise { to { opacity: 1; transform: translateY(0); } }
 
   .avatar {
-    width: 116px;
-    height: 116px;
-    margin: 0 auto 30px;
-    border-radius: 50%;
-    padding: 4px;
-    background: linear-gradient(135deg, var(--pink), var(--cyan));
-  }
-
-  .avatar-inner {
-    width: 100%;
-    height: 100%;
+    width: 112px;
+    height: 112px;
+    margin: 0 auto 28px;
     border-radius: 50%;
     overflow: hidden;
-    border: 3px solid var(--deep);
+    border: 1px solid var(--line);
   }
 
   .avatar img {
@@ -98,117 +62,90 @@
   }
 
   .name-jp {
-    font-family: 'Zen Maru Gothic', sans-serif;
-    font-weight: 900;
-    font-size: 30px;
-    letter-spacing: 0.04em;
-    background: linear-gradient(90deg, #ffffff, var(--cyan) 60%, var(--pink));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 700;
+    font-size: 23px;
+    letter-spacing: 0.08em;
+    color: var(--ink);
   }
 
   .name-en {
-    margin-top: 10px;
-    font-family: 'Unbounded', sans-serif;
-    font-weight: 700;
-    font-size: 12.5px;
-    letter-spacing: 0.34em;
+    margin-top: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.32em;
     text-transform: uppercase;
-    color: var(--cyan);
+    color: var(--ink-soft);
   }
 
   .divider {
-    width: 64px;
-    height: 3px;
+    width: 28px;
+    height: 1px;
     margin: 26px auto;
-    border-radius: 2px;
-    background: linear-gradient(90deg, var(--pink), var(--orange), var(--cyan));
+    background: var(--ink-soft);
   }
 
   .contact {
-    margin-top: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 14px;
+    gap: 10px;
   }
 
   .contact a {
     display: inline-block;
-    font-family: 'Space Grotesk', sans-serif;
+    width: 100%;
+    max-width: 260px;
+    font-family: 'Inter', sans-serif;
     font-weight: 500;
-    font-size: 15px;
-    letter-spacing: 0.02em;
-    color: #fff;
+    font-size: 13.5px;
+    letter-spacing: 0.03em;
+    color: var(--ink);
     text-decoration: none;
-    padding: 13px 30px;
-    border-radius: 999px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 12px 20px;
+    border: 1px solid var(--ink-soft);
+    transition: background 0.2s ease, color 0.2s ease;
   }
 
-  .contact a.email {
-    background: linear-gradient(90deg, var(--pink), var(--purple));
-    box-shadow: 0 8px 24px -8px rgba(255,45,149,0.6);
-  }
-
-  .contact a.email:hover {
-    transform: translateY(-2px) scale(1.03);
-    box-shadow: 0 12px 30px -8px rgba(0,229,255,0.55);
-  }
-
-  .contact a.phone {
-    background: rgba(255,255,255,0.04);
-    border: 1.5px solid transparent;
-    background-image:
-      linear-gradient(rgba(15,8,28,0.9), rgba(15,8,28,0.9)),
-      linear-gradient(90deg, var(--cyan), var(--orange));
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
-    box-shadow: 0 8px 24px -12px rgba(0,229,255,0.4);
-  }
-
-  .contact a.phone:hover {
-    transform: translateY(-2px) scale(1.03);
-    box-shadow: 0 12px 30px -10px rgba(255,138,61,0.5);
+  .contact a:hover {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
   }
 
   .domain {
-    margin-top: 32px;
-    font-family: 'Unbounded', sans-serif;
-    font-size: 11px;
+    margin-top: 30px;
+    font-family: 'Inter', sans-serif;
+    font-size: 10.5px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.45);
+    color: var(--ink-soft);
   }
 
   @media (max-width: 380px) {
-    .card { padding: 46px 26px 32px; }
+    .card { padding: 46px 28px 34px; }
   }
 </style>
 </head>
 <body>
 
-  <div class="glow-ring">
-    <div class="card">
-      <div class="avatar">
-        <div class="avatar-inner">
-          <img src="mami-avatar.jpg" alt="前田真実">
-        </div>
-      </div>
-
-      <div class="name-jp">前田&nbsp;真実</div>
-      <div class="name-en">Mami&nbsp;Maeda</div>
-
-      <div class="divider"></div>
-
-      <div class="contact">
-        <a class="email" href="mailto:zhenshi0418@gmail.com">zhenshi0418@gmail.com</a>
-        <a class="phone" href="tel:+819058563215">+81 90-5856-3215</a>
-      </div>
-
-      <div class="domain">mamimaeda.com</div>
+  <div class="card">
+    <div class="avatar">
+      <img src="mami-avatar-cat.jpg" alt="前田真実">
     </div>
+
+    <div class="name-jp">前田&nbsp;真実</div>
+    <div class="name-en">Mami&nbsp;Maeda</div>
+
+    <div class="divider"></div>
+
+    <div class="contact">
+      <a href="mailto:zhenshi0418@gmail.com">zhenshi0418@gmail.com</a>
+      <a href="tel:+819058563215">+81 90-5856-3215</a>
+    </div>
+
+    <div class="domain">mamimaeda.com</div>
   </div>
 
 </body>
